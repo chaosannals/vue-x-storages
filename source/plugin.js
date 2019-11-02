@@ -8,5 +8,5 @@ export default {
     install(Vue) {
         Vue.prototype.$cache = cache;
         Vue.prototype.$session = session;
-    }
+    },
 };
