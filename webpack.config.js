@@ -8,9 +8,11 @@ module.exports = {
         filename: '[name].js',
         path: path.resolve(__dirname, 'target'),
         library: 'vue-x-storages',
-        libraryTarget: 'umd2',
+        libraryTarget: 'commonjs2',
         libraryExport: 'default',
-        umdNamedDefine: true,
+    },
+    optimization: {
+        minimize: false
     },
     module: {
         rules: [{
@@ -39,7 +41,7 @@ module.exports = {
                             corejs: false,
                             helpers: false,
                             regenerator: false,
-                            useESModules: false,
+                            useESModules: true,
                         }],
                     ],
                 },

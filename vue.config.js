@@ -7,7 +7,6 @@ module.exports = {
             alias: {
                 '@': path.resolve(__dirname, 'demo'),
                 '@source': path.resolve(__dirname, 'source'),
-                '@target': path.resolve(__dirname, 'target'),
             },
         },
     },

@@ -57,4 +57,12 @@ export default class BaseStorage {
     drop(name) {
         this.storage.removeItem(name);
     }
+
+    /**
+     * 清除所有信息。
+     * 
+     */
+    clear() {
+        this.storage.clear();
+    }
 }
