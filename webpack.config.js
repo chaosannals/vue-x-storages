@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        'vue-x-storages': path.resolve(__dirname, 'source', 'plugin.js'),
+        'vue-x-storages': path.resolve(__dirname, 'source', 'all.js'),
     },
     output: {
         filename: '[name].js',

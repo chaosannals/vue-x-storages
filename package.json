@@ -1,12 +1,12 @@
 {
   "name": "vue-x-storages",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "author": {
     "name": "chaosannals",
     "email": "chaosannals@outlook.com",
     "url": "https://github.com/chaosannals"
   },
-  "main": "source/plugin.js",
+  "main": "source/all.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "webpack --mode=production",

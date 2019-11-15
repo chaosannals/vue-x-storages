@@ -5,11 +5,11 @@
 export default class BaseStorage {
     /**
      * 
-     * @param {*} duration 
+     * @param {*} duration 缓存市场。
      */
     constructor(storage, duration) {
         this.storage = storage;
-        this.duration = duration;
+        this.duration = duration || Infinity;
     }
 
     /**
@@ -50,19 +50,15 @@ export default class BaseStorage {
     }
 
     /**
-     * 删除信息。
+     * 删除信息，不填为全删。
      * 
      * @param {*} name 键名
      */
     drop(name) {
-        this.storage.removeItem(name);
-    }
-
-    /**
-     * 清除所有信息。
-     * 
-     */
-    clear() {
-        this.storage.clear();
+        if (name) {
+            this.storage.removeItem(name);
+        } else {
+            this.storage.clear();
+        }
     }
 }

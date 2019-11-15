@@ -11,6 +11,6 @@ export default class SessionStorage extends BaseStorage {
      * @param {*} duration 持续时间
      */
     constructor(duration) {
-        super(sessionStorage, duration || Infinity);
+        super(sessionStorage, duration);
     }
 }

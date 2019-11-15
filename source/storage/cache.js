@@ -11,6 +11,6 @@ export default class CacheStorage extends BaseStorage {
      * @param {*} duration 持续时间
      */
     constructor(duration) {
-        super(localStorage, duration || (60 * 60 * 1000));
+        super(localStorage, duration);
     }
 }
