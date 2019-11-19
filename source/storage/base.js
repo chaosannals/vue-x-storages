@@ -13,6 +13,26 @@ export default class BaseStorage {
     }
 
     /**
+     * 
+     * @param {*} name 
+     * @param {*} defaultValue 
+     */
+    has(name) {
+        let now = new Date().getTime();
+        let text = this.storage.getItem(name);
+        if (!text) {
+            return false;
+        }
+        let data = JSON.parse(text);
+        let expired = data.expired || Infinity;
+        if (expired < now) {
+            this.storage.removeItem(name);
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * 获取信息。
      * 
      * @param {*} name 键名
