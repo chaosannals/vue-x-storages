@@ -8,6 +8,7 @@ export default class BaseStorage {
      * @param {*} duration 缓存市场。
      */
     constructor(storage, duration) {
+        this.tags = {};
         this.storage = storage;
         this.duration = duration || Infinity;
     }
@@ -74,11 +75,31 @@ export default class BaseStorage {
      * 
      * @param {*} name 键名
      */
-    drop(name) {
-        if (name) {
-            this.storage.removeItem(name);
+    drop(sign) {
+        if (sign) {
+            if (typeof (sign) == 'string') {
+                this.storage.removeItem(sign);
+            } else {
+                for (let name of sign) {
+                    this.storage.removeItem(name);
+                }
+            }
         } else {
             this.storage.clear();
         }
+    }
+
+    /**
+     * 标签组。
+     * 
+     */
+    tag(tag, name) {
+        if (!this.tags[tag]) {
+            this.tags[tag] = new Set();
+        }
+        if (this.has(name)) {
+            this.tags[tag].add(name);
+        }
+        return this.tags[tag];
     }
 }
